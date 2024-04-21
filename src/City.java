@@ -3,7 +3,12 @@ import java.util.ArrayList;
 public class City extends Polygon{
     public  final  Point center;
     private String nameCity;
-    public City( Point center, String nameCity, double wallLength) {
+
+    public String getNameCity() {
+        return nameCity;
+    }
+
+    public City(Point center, String nameCity, double wallLength) {
         super(new ArrayList<>());
         double halfWallLength = wallLength/2.0;
         double x1 = center.x - halfWallLength;
