@@ -1,6 +1,6 @@
 public class Point {
-    public final float x;
-    public final float y;
+    public final double x;
+    public final double y;
 
 
     public Point(float x, float y) {
