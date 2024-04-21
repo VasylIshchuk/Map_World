@@ -1,6 +1,11 @@
 import java.util.List;
 public class Polygon {
     private List<Point> pointsList;
+
+    public Polygon(List<Point> pointsList) {
+        this.pointsList = pointsList;
+    }
+
     public String makePolygon(){
         StringBuilder polygon = new StringBuilder();
         polygon.append("<polygon points=\"");
@@ -16,9 +21,9 @@ public class Polygon {
     public boolean inside (Point point){
         int counter = 0;
         double d,x,a,b;
-        for(int i = 0; i < pointsList.size();i = i+2){
+        for(int i = 0; i < pointsList.size();++i){
             Point point1 = pointsList.get(i);
-            Point point2 = pointsList.get(i + 1);
+            Point point2 = pointsList.get((i+1 == pointsList.size()) ? 0 : i+1 );
             if(point1.y > point2.y){
                 Point tmp = point1;
                 point1 = point2;
@@ -36,7 +41,7 @@ public class Polygon {
                 if(x < point.x) ++counter;
             }
         }
-        if((counter % 2) == 1)return  false;
-        else return  true;
+        if((counter % 2) == 1) return  true;
+        else return  false;
     }
 }
