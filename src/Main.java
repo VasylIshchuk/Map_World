@@ -6,7 +6,7 @@ public class Main {
 //        checkPointInsidePolygon();
 //        checkPointOutsidePolygon();
 //        checkPointRightOfPolygon();
-//        ckeckAddCityOutsideLand();
+//       ckeckAddCityOutsideLand();
         ckeckAddCityInsideLand();
     }
     public static void checkPointInsidePolygon(){

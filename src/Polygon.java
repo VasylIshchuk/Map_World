@@ -10,6 +10,10 @@ public class Polygon {
         this.pointsList.add(point);
     }
 
+    public List<Point> getPointsList() {
+        return pointsList;
+    }
+
     public String makePolygon(){
         StringBuilder polygon = new StringBuilder();
         polygon.append("<polygon points=\"");

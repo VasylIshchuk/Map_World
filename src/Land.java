@@ -9,5 +9,6 @@ public class Land extends Polygon{
     public void addCity(City city){
         if (inside(city.center)) cities.add(city);
         else throw new RuntimeException(city.getNameCity());
+        city.checkCityIsPortCity(this);
     }
 }
