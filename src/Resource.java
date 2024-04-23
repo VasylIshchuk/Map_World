@@ -1,9 +1,9 @@
 public class Resource {
     public enum TYPE {Coal,Wood,Fish}
-    public final Point point1;
+    public final Point point;
     public final TYPE type;
-    public Resource(Point point1,TYPE type) {
-        this.point1 = point1;
+    public Resource(Point point,TYPE type) {
+        this.point = point;
         this.type = type;
     }
 }

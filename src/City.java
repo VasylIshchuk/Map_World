@@ -1,12 +1,20 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class City extends Polygon{
     public final Point center;
     private String nameCity;
-    boolean port;
+    private boolean port;
+    public Set<Resource> resources = new HashSet<>();
     public String getNameCity() {
         return nameCity;
     }
+    public boolean isPort() {
+        return port;
+    }
+
     public City(Point center, String nameCity, double wallLength) {
         super(new ArrayList<>());
         double halfWallLength = wallLength/2.0;
@@ -28,6 +36,17 @@ public class City extends Polygon{
             if(!land.inside(point)){
                 port = true;
                 break;
+            }
+        }
+    }
+
+    public void addResourcesInRange(List<Resource> resourceList, double range){
+       for (Resource resourse : resourceList){
+            if ((center.x-range < resourse.point.x && resourse.point.x < center.x+range)
+                 && (center.y-range < resourse.point.y && resourse.point.y < center.y+range)){
+                //calculateDistance(resource.getPosition(), center) <= range   d = sqrt(x2−x1)^2+(y2 −y1)^2
+                if (resourse.type.equals(Resource.TYPE.Fish) && !port) continue;
+                resources.add(resourse);
             }
         }
     }
