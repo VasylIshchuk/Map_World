@@ -8,9 +8,9 @@ public class Main {
 //        checkPointRightOfPolygon();
 //        ckeckAddCityOutsideLand();
 //        ckeckAddCityInsideLand();
-//        checkCityIsPortCity();
-//        checkAddResources();
-//        checkAddResourcesPortCity();
+        checkCityIsPortCity();
+        checkAddResources();
+        checkAddResourcesPortCity();
     }
     public static void checkPointInsidePolygon(){
         List<Point> points = new ArrayList<>();
